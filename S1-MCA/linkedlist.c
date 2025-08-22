@@ -19,38 +19,71 @@ void insertatbeginning(int n){
     head=newnode;
 }
 void insertatend(int n){
-    struct node *tempnode=createnode(n);
-    struct node *ptr=head;
-    while(ptr!=NULL){
+    struct node* tempnode=createnode(n);
+    struct node* ptr=head;
+    while(ptr->next!=NULL){
     ptr=ptr->next;
-    ptr->next=tempnode;
     }
+    ptr->next=tempnode;
+    
 }
+void insertatmiddle(int n)
+{
+    int pos,i;
+    struct node* newnode=createnode(n);
+    struct node* ptr=head;
+    printf("enter the position:");
+    scanf("%d",&pos);
+    for(i=1;i<pos;i++)
+    {
+       ptr=ptr->next;
+}
+        newnode->next=ptr->next;
+        ptr->next=newnode;
+    }
 void display()
 {
      struct node *ptr=head;
     while(ptr!=NULL){
-     printf("%d",ptr->data);
+     printf("%d \n",ptr->data);
     ptr=ptr->next;
    }
 
 }
 
-
-
-
-
-
-
-
-
-
-
 int main(){
 
-insertatbeginning(5);
-insertatbeginning(6);
-insertatbeginning(7);
-display();
-return 0;
+    int n, ch;
+    printf("1. Insert at beginning \n 2. Insert at end \n 3.Insert at middle \n 4.Display \n");
+    do
+    {
+        printf("enter the choice:");
+        scanf("%d",&ch);
+        switch (ch)
+        {
+        case 1:
+            printf("Enter the number you want to insert \n");
+            scanf("%d",&n);
+            insertatbeginning(n);
+            break;
+        case 2:
+            printf("Enter the number you want to insert \n");
+            scanf("%d",&n);
+            insertatend(n);
+            break;
+        case 3:
+            printf("Enter the number you want to insert \n");
+            scanf("%d",&n);
+            insertatmiddle(n);
+            break;
+        case 4:
+            display();
+            break;
+        default:
+        printf("Invalid");
+      break;
+ }
+    } while (ch<5);
+    
+//return 0;
 }
