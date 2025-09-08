@@ -1,0 +1,26 @@
+h2{
+    color: rgb(0, 0, 0);
+    background: #d641cc;
+    background-color: #ffffff; 
+        border-radius: 8px; 
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+        padding: 20px; 
+        margin: 20px auto; 
+        max-width: 400px; 
+        text-align: center; 
+        background-image: linear-gradient(to right, #f6ff46, #cb9900);
+}
+
+
+#abc{
+color: blanchedalmond;
+}
+.ab{
+    color: blueviolet;
+}
+p.abc{
+    color: brown;
+}
+.bc,#cd{
+    color: chocolate;
+}
