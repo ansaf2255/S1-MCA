@@ -22,7 +22,7 @@ void enqueue(int n)
     struct node * new = createnode(n);
     if (head == NULL) 
     {
-        head = new;
+        head = new; 
     } 
     else 
     {

@@ -1,0 +1,23 @@
+<html>
+    <head>
+        </head>
+        <body>
+            Enter number1:<input type="text" id="a"><br>
+            Enter number2:<input type="text" id="b">
+            <h1 id="c"></h1>
+            <button onclick=sum();>Add</button>
+
+             <script>
+            function sum()
+            {
+                let x=parseInt(document.getElementById("a").value);
+                let y=parseInt(document.getElementById("b").value);
+                let z=x+y;
+                document.getElementById("c").innerHTML="sum="+z;
+                alert("sum= "+z);
+
+            }
+        </script>
+        </body>
+        </html>
+
