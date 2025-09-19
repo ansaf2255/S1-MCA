@@ -86,7 +86,10 @@ void deleteatmiddle()
     ptr->next=ptr1;
 }
 
+void search()
+{
 
+}
 
 void display()
 {
@@ -100,7 +103,8 @@ void display()
 
 
 
-int main(){
+int main()
+{
     // insertatbeginning(11);
     // insertatbeginning(22);
     // insertatbeginning(33);
