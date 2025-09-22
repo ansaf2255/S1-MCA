@@ -55,12 +55,13 @@ void insertatend(int n)
     else
     {
         struct node* ptr=head;
-        while(ptr->next=head)
+        while(ptr->next!=head)
         {
             ptr=ptr->next;
         }
         ptr->next=tempnode;
-        tempnode->next=head;  
+        tempnode->next=head;
+        head=tempnode;  
     }
 }
 

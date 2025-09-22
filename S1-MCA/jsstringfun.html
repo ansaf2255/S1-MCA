@@ -1,0 +1,114 @@
+<html>
+    <head>
+    </head>
+    <body>
+         <p id="res"></p>
+        <input type="text" id="name"><br><br><br>
+        <button onclick="len()">length</button>
+        <button onclick="upcase()">uppercase</button>
+        <button onclick="lwcase()">lowercase</button>
+        <button onclick="substring()">substring(2,6)</button>
+        <button onclick="slice()">slice(2,5)</button>
+        <button onclick="rev()">reverse</button>
+        <button onclick="replace()">replace</button>
+        <br><br><br><br>
+
+         <input type="text" id="num">
+         <p id="sum"></p>
+        <button onclick="round()">Round</button>
+        <button onclick="ceil()">Ceil</button>
+        <button onclick="floor()">Floor</button>
+        <button onclick="abs()">abs</button>
+        <button onclick="sin()">sin</button>
+        <button onclick="cos()">cos</button>
+        <button onclick="max()">Max</button>
+        <button onclick="min()">Min</button>
+        <button onclick="max()">Power</button>
+
+        <script>
+            function len(){
+                let n=document.getElementById("name").value;
+                let length=n.length;
+                document.getElementById("res").innerHTML=length;
+            }
+            function upcase(){
+                let n=document.getElementById("name").value;
+                let up=n.toUpperCase();
+                document.getElementById("res").innerHTML=up;
+            }
+            function lwcase(){
+                let n=document.getElementById("name").value;
+                let low=n.toLowerCase();
+                document.getElementById("res").innerHTML=low;
+            }
+            function substring(){
+                let n=document.getElementById("name").value;
+                let sub=n.substring(2,6);
+                document.getElementById("res").innerHTML=sub;
+            }
+            function slice(){
+                let n=document.getElementById("name").value;
+                let sli=n.slice(2,5);
+                document.getElementById("res").innerHTML=sli;
+            }
+            function rev(){
+                let n=document.getElementById("name").value;
+                let re=n.split('').reverse().join('');
+                document.getElementById("res").innerHTML=re;
+            }
+
+             function replace(){
+            let n=document.getElementById("name").value;
+            let substring=n.replace('na','js');
+            document.getElementById("res").innerHTML=substring;
+        }
+        function round(){
+            let n= document.getElementById("num").value;
+            let substring=Math.round(n);
+            document.getElementById("sum").innerHTML=substring;
+        }
+        function ceil(){
+            let n= document.getElementById("num").value;
+            let substring=Math.ceil(n);
+            document.getElementById("sum").innerHTML=substring;
+        }
+        function floor(){
+            let n= document.getElementById("num").value;
+            let substring=Math.floor(n);
+            document.getElementById("sum").innerHTML=substring;
+        }
+        function abs(){
+            let n= document.getElementById("num").value;
+            let substring=Math.abs(n);
+            document.getElementById("sum").innerHTML=substring;
+        }
+        function sin(){
+            let n= document.getElementById("num").value;
+            let substring=Math.sin(n);
+            document.getElementById("sum").innerHTML=substring;
+        }
+        function cos(){
+            let n= document.getElementById("num").value;
+            let substring=Math.cos(n);
+            document.getElementById("sum").innerHTML=substring;
+        }
+        function max(){
+            let num=Math.max(7,6,5,2);
+            document.getElementById("sum").innerHTML=num;
+        }
+        function min(){
+            let num=Math.min(7,6,5,2);
+            document.getElementById("sum").innerHTML=num;
+        }
+        function power(){
+            let n= document.getElementById("num").value;
+            let n1=parseInt(n);
+            let substring=Math.pow(n1,2);
+            document.getElementById("sum").innerHTML=substring;
+        }
+      
+            
+
+        </script>
+    </body>
+</html>

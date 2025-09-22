@@ -1,0 +1,68 @@
+<!-- <html>
+
+    <head>
+    </head>
+    <body>
+    <p id="abc"></p>
+        <script>
+            var d ="<table BORDER='1'><tr><th>SUN</th><th>MON</th><th>TUE</th><th>WED</th><th>THU</th><th>FRI</th><th>SAT</th></tr>";
+            var t ="</table>";
+            var c= new Date(2025,0);
+            var day=c.getDay();
+            for(var i=0;i<day;i++)
+            {
+                d+="<td></td>";
+            }
+            while(c.getMonth()==0)
+            {
+                d+="<td>"+c.getDate()+"</td>";
+                if(c.getDay()%7==6)
+                {
+                    d+="<tr>";
+                }
+                c.setDate(c.getDate()+1);
+            }
+            d+="<td>"+c.getDate()+"<td>"
+            //alert(day);
+            d+=t;
+            document.getElementById("abc").innerHTML=d;
+
+        </script>
+    </body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Calendar</title>
+</head>
+<body>
+  <h2>Calendar Generator</h2>
+  <input id="yearInput" type="number" placeholder="Enter year">
+  <button onclick="genCal()">Generate</button>
+
+  <div id="out" style="font-family: monospace; white-space: pre;"></div>
+
+  <script>
+    function genCal() {
+      let y = parseInt(document.getElementById("yearInput").value);
+      if (!y) return alert("Enter a valid year");
+      const mNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+                      "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+      let out = "";
+      for (let m = 0; m < 12; m++) {
+        out += `\n ${mNames[m]} ${y}\nSun Mon Tue Wed Thu Fri Sat\n`;
+        let first = new Date(y, m, 1).getDay();
+        let days = new Date(y, m + 1, 0).getDate();
+        out += "    ".repeat(first);
+        for (let d = 1; d <= days; d++) {
+          out += d.toString().padStart(2, ' ') + "  ";
+          if ((first + d) % 7 === 0) out += "\n";
+        }
+        out += "\n";
+      }
+      document.getElementById("out").textContent = out;
+    }
+  </script>
+</body>
+</html>
