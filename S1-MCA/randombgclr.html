@@ -1,0 +1,19 @@
+<html>
+    <head></head>
+    <body>
+        <button type="button" id="hh">Change BG clr</button>
+    </body>
+    <script>
+        document.getElementById("hh").addEventListener("click",myfun);
+function myfun()
+{
+    var rcol = "#";
+    for(i=0;i<6;i++)
+    {
+    rcol+=Math.floor(Math.random()*10);
+    }
+    document.body.style.background=rcol;
+
+}
+    </script>
+</html>

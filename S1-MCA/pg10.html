@@ -1,0 +1,32 @@
+<html>
+<head>
+
+</head>
+<body>
+<img src="ironman.jpg" id="img" width="400" height="500">
+<p id="tt">
+   I AM IRONMAN
+   </p>
+</body>
+<script>
+    const i=document.getElementById("img")
+    const j=document.getElementById("tt")
+
+    i.addEventListener("mouseover",myfun);
+
+function myfun()
+{
+    i.src="groot.jpg";
+    j.textContent="I AM GROOT"
+
+}
+i.addEventListener("mouseout",yourfun);
+
+function yourfun()
+{
+    i.src="ironman.jpg";
+    j.textContent="I AM IRONMAN"
+
+}
+</script>
+</html>
