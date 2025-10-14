@@ -45,7 +45,7 @@ void dequeue()
     else
     {
         struct node * ptr=head;
-        printf("\n Deleted element is %d", ptr->data);
+        printf("\nDeleted element is %d\n", ptr->data);
         head = ptr->next;
         free(ptr);
     }

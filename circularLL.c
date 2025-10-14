@@ -20,12 +20,11 @@ struct node * createnode(int n)
 void insertatbeginning(int n)
 
 {
-    if(head=NULL)
+    if(head==NULL)
     {
         struct node *newnode=createnode(n);
-        newnode->next=newnode;
         head=newnode;
-
+        newnode->next=head;
     }
     else
     {
@@ -47,7 +46,7 @@ void insertatend(int n)
 {
 
     struct node* tempnode=createnode(n);
-    if (head=NULL)
+    if (head==NULL)
     {
         tempnode->next=tempnode;
         head=tempnode;
@@ -61,7 +60,6 @@ void insertatend(int n)
         }
         ptr->next=tempnode;
         tempnode->next=head;
-        head=tempnode;  
     }
 }
 
@@ -81,15 +79,33 @@ void insertatmiddle(int n)
     ptr->next=newnode;
 }
 
+// void deleteatbegin()
+// {
+//     struct node * ptr = head;
+//     printf("deleted element is %d\n", ptr->data);
+//     head = ptr->next;
+// }
+
+// void deleteatend()
+// {
+
+// }
+
+// void deleteatmiddle()
+// {
+
+// }
+
 void display()
 
 {
     struct node * ptr=head;
-    while(ptr->next!=head)
+
+    do
     {
         printf("%d \n",ptr->data);
         ptr=ptr->next;
-    }
+    }while(ptr != head);
 }
 
 int main()
@@ -99,9 +115,10 @@ int main()
     insertatbeginning(20);
     insertatbeginning(30);
     insertatbeginning(40);
-    // insertatend(50);
+    insertatend(50);
     display();
     // insertatmiddle(60);
-    // display();
+    deleteatbegin();
+    display();
 }
 
