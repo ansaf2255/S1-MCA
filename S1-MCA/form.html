@@ -1,0 +1,18 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <form name="myform" >
+            <input type="text" id="abc">
+            <button type="button" onClick="my_function()" >click me</button>
+        </form>
+        <script>
+        function my_function()
+        {
+        let x=document.forms["myform"]["abc"].value;
+        if (x==""){
+        alert("the name can't be empty!")
+        }}
+        </script>
+    </body>
+</html>
