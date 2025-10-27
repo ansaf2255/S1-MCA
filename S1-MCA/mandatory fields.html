@@ -1,0 +1,103 @@
+<html>
+    <head>
+        <title>Scrolling Text Mouse over</title>
+    </head>
+    <body bgcolor="#90CAF9">
+        <h1 style="color: red;"><marquee behavior="scroll" onmouseover="this.stop()" onmouseout="this.start()">WELCOME TO FRESHERS WORLD!!!</marquee></h1>
+    <br><br><br>
+        <form name="myform">
+        <table border="1" align="center" bgcolor="#FBA8B6">
+            <tr>
+                <th colspan="4"><h2>Registration Form</h2></th>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td colspan="2"><input type="text" id="abc" name="abc"><p id="nameid"></td>
+            </tr>
+            <tr>
+                <th>Age</th>
+                <td colspan="2">
+                <select>
+                <option>select</option>
+                <option>18</option>
+                <option>19</option>
+                <option>20</option>
+                <option>21</option>
+
+                </select></td>
+                
+            </tr>
+             <tr>
+                <th>Password</th>
+                <td colspan="2"><input type="password" id="def" name="def"><p id="passid"></td>
+            </tr>
+             <tr>
+                <th>Re-enter Password</th>
+                <td colspan="2"><input type="password" id="def2" name="def2"></td>
+            </tr>
+             <tr>
+                <th rowspan="4" >Select your security question</th>
+                <td colspan="2"><input type="radio" name="abc">What is your pet name?</td>
+               <tr><td colspan="2"><input type="radio" name="abc">Who is your best friend?</td></tr>
+               <tr><td colspan="2"><input type="radio" name="abc">What is your favourite color?</td></tr>
+                <tr><td colspan="2"><input type="radio" name="abc">Who is your favourite teacher?</td></tr>
+            </tr>
+            <tr>
+                <th>Answer of security question</th>
+                <td colspan="2"><input type="text"></td>
+            </tr>
+            <tr>
+                <th>Email id</th>
+                <td colspan="2"><input type="text"></td>
+            </tr>
+            <tr>
+                <th>Languages Known</th>
+                <td colspan="2"><input type="checkbox">Malayalam  
+               <input type="checkbox">English  
+               <input type="checkbox">Hindi</td>
+            </tr>
+            <tr>
+                <th rowspan="2">Phone number</th>
+                <th >Home</th>
+                <th>Office</th>
+                
+            </tr>
+            <tr><td><input type="text"></td>
+            <td><input type="text"></td></tr>
+            <tr>
+                <th>Upload CV</th>
+                <td colspan="2"><input type="file"></td>
+            </tr>
+            <tr>
+                <th><input type="reset"></th>
+                <th colspan="3"><input type="submit" onClick="my_function(event)"></th>
+            </tr>
+            
+    </table>
+    </form>
+    <script>
+        function my_function()
+        {
+        let x=document.getElementById("abc").value;
+        event.preventDefault();
+        if (x=="")
+        {
+        document.getElementById("nameid").innerHTML="the name can't be empty";
+        return false;
+        }
+        event.preventDefault();
+        if (!isNaN(x))
+        {
+        document.getElementById("nameid").innerHTML="cannot be a number";
+        return false;
+        }
+        //alert("the name can't be empty! and can't be a number")
+        
+        let y=document.getElementById("def").value;
+        event.preventDefault();
+        if (y==""){
+        document.getElementById("passid").innerHTML="password cannot be empty";
+        }}
+        </script>
+    </body>
+</html>
