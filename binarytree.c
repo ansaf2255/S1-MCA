@@ -58,6 +58,26 @@ void insert(int n)
     }
 }
 
+void delete(int n)
+{
+
+} 
+
+void search(int n ,struct node * root)
+{
+    if (root==NULL)
+    {
+        printf("Empty");
+    }
+    else if(n>root->data,root->right)
+    {
+        search(n,root->right);
+
+    }   
+
+
+}
+
 void preorder(struct node *root)
 {
      if (root != NULL) 
@@ -65,6 +85,29 @@ void preorder(struct node *root)
         printf("%d ", root->data);  
         preorder(root->left);       
         preorder(root->right);      
+    }
+
+
+void postorder(struct node *root)
+{
+     if (root != NULL) 
+    {
+      
+       postorder(root->left);       
+       postorder(root->right); 
+        printf("%d ", root->data);       
+    }
+}
+
+void inorder(struct node *root)
+{
+     if (root != NULL) 
+    {
+      
+       inorder(root->left);
+         printf("%d ", root->data);          
+       inorder(root->right); 
+          
     }
 }
 
