@@ -1,0 +1,215 @@
+<html>
+<head>
+    <title>Mandatory Fields</title>
+    <style>
+        body {
+            background-color: #90CAF9;
+        }
+        table {
+            border: 1px solid black;
+            background-color: #FBA8B6;
+        }
+        #nameid, #passid, #emailid, #langid, #phoneid, #ageid, #secid, #cvid {
+            color: red;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="color: red;">
+        <marquee behavior="scroll" onmouseover="this.stop()" onmouseout="this.start()">WELCOME TO FRESHERS WORLD!!!</marquee>
+    </h1>
+    <br><br><br>
+
+    <form name="myform" onsubmit="return my_function(event)">
+        <table align="center" cellpadding="5">
+            <tr>
+                <th colspan="4"><h2>Registration Form</h2></th>
+            </tr>
+
+            <tr>
+                <th>Name</th>
+                <td colspan="2"><input type="text" id="abc" name="abc"><p id="nameid"></p></td>
+            </tr>
+
+            <tr>
+                <th>Age</th>
+                <td colspan="2">
+                    <select id="age">
+                        <option value="">select</option>
+                        <option>18</option>
+                        <option>19</option>
+                        <option>20</option>
+                        <option>21</option>
+                    </select>
+                    <p id="ageid"></p>
+                </td>
+            </tr>
+
+            <tr>
+                <th>Password</th>
+                <td colspan="2"><input type="password" id="def" name="def"><p id="passid"></p></td>
+            </tr>
+
+            <tr>
+                <th>Re-enter Password</th>
+                <td colspan="2"><input type="password" id="def2" name="def2"></td>
+            </tr>
+
+            <tr>
+                <th rowspan="4">Select your security question</th>
+                <td colspan="2"><input type="radio" name="sec">What is your pet name?</td>
+            </tr>
+            <tr><td colspan="2"><input type="radio" name="sec">Who is your best friend?</td></tr>
+            <tr><td colspan="2"><input type="radio" name="sec">What is your favourite color?</td></tr>
+            <tr><td colspan="2"><input type="radio" name="sec">Who is your favourite teacher?</td></tr>
+            <tr><td colspan="3"><p id="secid"></p></td></tr>
+
+            <tr>
+                <th>Answer of security question</th>
+                <td colspan="2"><input type="text"></td>
+            </tr>
+
+            <tr>
+                <th>Email ID</th>
+                <td colspan="2"><input type="text" id="email"><p id="emailid"></p></td>
+            </tr>
+
+            <tr>
+                <th>Languages Known</th>
+                <td colspan="2">
+                    <input type="checkbox" name="lang">Malayalam  
+                    <input type="checkbox" name="lang">English  
+                    <input type="checkbox" name="lang">Hindi  
+                    <p id="langid"></p>
+                </td>
+            </tr>
+
+            <tr>
+                <th rowspan="2">Phone Number</th>
+                <th>Home</th>
+                <th>Office</th>
+            </tr>
+            <tr>
+                <td><input type="text" id="home"></td>
+                <td><input type="text" id="office"></td>
+            </tr>
+            <tr><td colspan="3"><p id="phoneid"></p></td></tr>
+
+            <tr>
+                <th>Upload CV</th>
+                <td colspan="2"><input type="file" id="cv" accept=".pdf,.doc,.docx"><p id="cvid"></p></td>
+            </tr>
+
+            <tr>
+                <th><input type="reset"></th>
+                <th colspan="3"><input type="submit" value="Submit"></th>
+            </tr>
+        </table>
+    </form>
+
+    <script>
+        function my_function(event) {
+            event.preventDefault();
+            let valid = true;
+
+           
+            let x = document.getElementById("abc").value.trim();
+            if (x === "") {
+                document.getElementById("nameid").innerHTML = "Name can't be empty";
+                valid = false;
+            } else if (!isNaN(x)) {
+                document.getElementById("nameid").innerHTML = "Name cannot be a number";
+                valid = false;
+            } else {
+                document.getElementById("nameid").innerHTML = "";
+            }
+
+            
+            let age = document.getElementById("age").value;
+            if (age === "") {
+                document.getElementById("ageid").innerHTML = "Please select your age";
+                valid = false;
+            } else {
+                document.getElementById("ageid").innerHTML = "";
+            }
+
+           
+            let y = document.getElementById("def").value;
+            let z = document.getElementById("def2").value;
+            if (y === "") {
+                document.getElementById("passid").innerHTML = "Password cannot be empty";
+                valid = false;
+            } else if (y !== z) {
+                document.getElementById("passid").innerHTML = "Passwords do not match";
+                valid = false;
+            } else {
+                document.getElementById("passid").innerHTML = "";
+            }
+
+            
+            let sec = document.querySelector('input[name="sec"]:checked');
+            if (!sec) {
+                document.getElementById("secid").innerHTML = "Please select a security question";
+                valid = false;
+            } else {
+                document.getElementById("secid").innerHTML = "";
+            }
+
+            
+            let email = document.getElementById("email").value.trim();
+            let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (email === "" || !emailPattern.test(email)) {
+                document.getElementById("emailid").innerHTML = "Please enter a valid email";
+                valid = false;
+            } else {
+                document.getElementById("emailid").innerHTML = "";
+            }
+
+            
+            let langs = document.querySelectorAll('input[name="lang"]:checked');
+            if (langs.length === 0) {
+                document.getElementById("langid").innerHTML = "Please select at least one language";
+                valid = false;
+            } else {
+                document.getElementById("langid").innerHTML = "";
+            }
+
+           
+            let home = document.getElementById("home").value.trim();
+            let office = document.getElementById("office").value.trim();
+            if ((home !== "" && isNaN(home)) || (office !== "" && isNaN(office))) {
+                document.getElementById("phoneid").innerHTML = "Phone numbers must be numeric";
+                valid = false;
+            } else {
+                document.getElementById("phoneid").innerHTML = "";
+            }
+
+            
+            let cv = document.getElementById("cv");
+            let file = cv.files[0];
+            if (!file) {
+                document.getElementById("cvid").innerHTML = "Please upload your CV";
+                valid = false;
+            } else {
+                let allowedExtensions = /(\.pdf|\.doc|\.docx)$/i;
+                if (!allowedExtensions.exec(file.name)) {
+                    document.getElementById("cvid").innerHTML = "Only PDF, DOC, or DOCX files are allowed";
+                    valid = false;
+                } else if (file.size > 2 * 1024 * 1024) { // 2MB
+                    document.getElementById("cvid").innerHTML = "File size must be less than 2 MB";
+                    valid = false;
+                } else {
+                    document.getElementById("cvid").innerHTML = "";
+                }
+            }
+
+            
+            if (valid) {
+                alert("Form submitted successfully!");
+                document.myform.submit();
+            }
+        }
+    </script>
+</body>
+</html>
