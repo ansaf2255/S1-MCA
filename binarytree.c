@@ -144,6 +144,7 @@ void delete(int n)
             item=ptr2->data;
             ptr->data=item;
             free(ptr2);
+
 //not working
         }
     }
