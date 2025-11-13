@@ -22,7 +22,7 @@ int main() {
             graph[i][j]=0;
         }
     }
-   printf("Enter the adjacency");
+   printf("Enter the adjacency ");
     for(int i=0;i<e;i++){
         scanf("%d %d",&u,&v);
         if(graph[v][u]==1){
@@ -64,7 +64,7 @@ int main() {
             }
         }
         if (!found) {
-            printf("Cycle detected! Topological sort not possible.\n");
+            printf("Cycle detected\n");
             return 0;  
         }
     }
