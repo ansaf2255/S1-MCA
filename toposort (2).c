@@ -36,17 +36,12 @@ int main() {
         
     }
 
-    
     for (int j = 0; j < n; j++) {
         for (int i = 0; i < n; i++) {
             indeg[j] += graph[i][j];
         }
     }
 
-
-
-     
-   
     for (int count = 0; count < n; count++) {
         int found = 0;
         for (int i = 0; i < n; i++) {

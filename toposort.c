@@ -14,7 +14,6 @@ int main() {
     int topo[10];            
     int index = 0;  
 
-    
     printf("Enter number of edges: ");
     scanf("%d", &e);
     for(int i=0;i<n;i++){
@@ -33,20 +32,14 @@ int main() {
           graph[u][v]=1;  
         }
         
-        
     }
 
-    
     for (int j = 0; j < n; j++) {
         for (int i = 0; i < n; i++) {
             indeg[j] += graph[i][j];
         }
     }
 
-
-
-     
-   
     for (int count = 0; count < n; count++) {
         int found = 0;
         for (int i = 0; i < n; i++) {
@@ -69,7 +62,6 @@ int main() {
         }
     }
 
-    
     printf("Topological Order:\n");
     for (int i = 0; i < n; i++)
         printf("%d ", topo[i]);
