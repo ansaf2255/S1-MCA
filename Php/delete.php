@@ -1,5 +1,5 @@
 <form action="delete.php" method="POST">
-<table >
+<table border="1">
     <tr>
         <th>Roll no</th>
         <th>Name</th>
@@ -22,10 +22,11 @@ if(mysqli_num_rows($b)>0)
         echo "<td>".$row['Address']."</td>";
         echo "<td>".$row['Phone']."</td>";
         echo "<td> <button name='update'>update</button></td>";
-        echo "<td> <button name='delete' >Delete</button></td>";
+        echo "<td> <button name='delete' value='".$row['RollNo']."' >Delete</button></td>";
         echo "</tr>";
         if(isset($_POST['delete'])){
-        $d = "DELETE FROM studentreg WHERE RollNo='{$row['RollNo']}'";
+        $roll=$_POST['delete'];
+        $d = "DELETE FROM studentreg WHERE RollNo=$roll";
         mysqli_query($con,$d);
         }
     }
