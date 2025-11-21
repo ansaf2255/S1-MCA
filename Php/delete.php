@@ -22,7 +22,7 @@ if(mysqli_num_rows($b)>0)
         echo "<td>".$row['Address']."</td>";
         echo "<td>".$row['Phone']."</td>";
         echo "<td> <button name='update'>update</button></td>";
-        echo "<td> <button name='delete'>Delete</button></td>";
+        echo "<td> <button name='delete' >Delete</button></td>";
         echo "</tr>";
         if(isset($_POST['delete'])){
         $d = "DELETE FROM studentreg WHERE RollNo='{$row['RollNo']}'";
